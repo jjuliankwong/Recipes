@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+public class Recipe
+{
+    var ingredients: [Ingredient]
+    var instructions: [String]
+    
+    init(ingredientsIn: [Ingredient], instructionsIn: [String])
+    {
+        
+    }
+}
