@@ -15,6 +15,7 @@
 		168193711CE15C6C00F0BAD1 /* RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168193701CE15C6C00F0BAD1 /* RecipesTests.swift */; };
 		1681937C1CE15C6C00F0BAD1 /* RecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1681937B1CE15C6C00F0BAD1 /* RecipesUITests.swift */; };
 		1681938A1CE15C9000F0BAD1 /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168193891CE15C9000F0BAD1 /* MenuScreen.swift */; };
+		411733E61CE2857100726866 /* RecipeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411733E51CE2857100726866 /* RecipeClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1681937B1CE15C6C00F0BAD1 /* RecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesUITests.swift; sourceTree = "<group>"; };
 		1681937D1CE15C6C00F0BAD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		168193891CE15C9000F0BAD1 /* MenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuScreen.swift; path = ../MenuScreen.swift; sourceTree = "<group>"; };
+		411733E51CE2857100726866 /* RecipeClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				168193891CE15C9000F0BAD1 /* MenuScreen.swift */,
+				411733E51CE2857100726866 /* RecipeClass.swift */,
 				1681935B1CE15C6C00F0BAD1 /* AppDelegate.swift */,
 				1681935D1CE15C6C00F0BAD1 /* ViewController.swift */,
 				1681935F1CE15C6C00F0BAD1 /* Main.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				1681938A1CE15C9000F0BAD1 /* MenuScreen.swift in Sources */,
 				1681935E1CE15C6C00F0BAD1 /* ViewController.swift in Sources */,
+				411733E61CE2857100726866 /* RecipeClass.swift in Sources */,
 				1681935C1CE15C6C00F0BAD1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
