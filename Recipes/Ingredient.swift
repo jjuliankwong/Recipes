@@ -8,3 +8,17 @@
 
 import Foundation
 import UIKit
+
+public class Ingredient
+{
+    var amountNum: Int
+    var measureType: String
+    var ingredientName: String
+    
+    init(amountNumIn: Int, measureTypeIn: String, ingredientNameIn: String)
+    {
+        amountNum = amountNumIn
+        measureType = measureTypeIn
+        ingredientName = ingredientNameIn
+    }
+}
