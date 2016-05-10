@@ -20,16 +20,6 @@ public class Ingredient
         amount = amountIn
         amountType = amountTypeIn
         type = typeIn
-=======
-    var amountNum: Int
-    var measureType: String
-    var ingredientName: String
-    
-    init(amountNumIn: Int, measureTypeIn: String, ingredientNameIn: String)
-    {
-        amountNum = amountNumIn
-        measureType = measureTypeIn
-        ingredientName = ingredientNameIn
->>>>>>> master
+
     }
 }
