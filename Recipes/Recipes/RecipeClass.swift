@@ -18,4 +18,14 @@ public class Recipe
     {
         
     }
+    
+    func addIngredient(ingredientIn: Ingredient)
+    {
+        ingredients.append(ingredientIn)
+    }
+    
+    func addInstruction(instructionIn: String)
+    {
+        instructions.append(instructionIn)
+    }
 }
