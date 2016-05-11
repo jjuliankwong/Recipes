@@ -6,7 +6,7 @@
 //  Copyright © 2016 JAJ. All rights reserved.
 import UIKit
 
-public class MenuScreen: UIViewController
+class MenuScreen: UIViewController
 {
     override func viewDidLoad()
     {
