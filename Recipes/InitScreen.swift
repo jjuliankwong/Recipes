@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class InitScreen: UIViewController
+class InitScreen: UIViewController
 {
-    override public func viewDidLoad()
+    override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,20 +18,18 @@ public class InitScreen: UIViewController
         //performSelector(Selector("showNavController"), withObject: nil, afterDelay: 3)
         
         let logo = UIImage(named: "logo")
-        let logoView = UIImageView(image: logo!)
+        let logoView = UIImageView(image: logo) //You don't want to forcefully unwrap this as there is no image named logo.
         logoView.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
         view.addSubview(logoView)
-
-        
-        func showNavController()
-        {
-            performSegueWithIdentifier("initScreen", sender: self)
-            
-        }
-        
     }
+  
+  func showNavController()
+  {
+    performSegueWithIdentifier("initScreen", sender: self)
     
-    override public func didReceiveMemoryWarning() {
+  }
+  
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

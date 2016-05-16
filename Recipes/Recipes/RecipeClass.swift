@@ -14,9 +14,10 @@ public class Recipe
     var ingredients: [Ingredient]
     var instructions: [String]
     
-    init(ingredientsIn: [Ingredient], instructionsIn: [String])
+  init(ingredients: [Ingredient], instructions: [String])
     {
-        
+        self.ingredients = ingredients
+        self.instructions = instructions
     }
     
     func addIngredient(ingredientIn: Ingredient)
