@@ -23,7 +23,7 @@ class MenuScreen: UIViewController
         view.addSubview(logoView)
         
         // Set up "See My Recipes" Button
-        let seeMyRecipesButton = UIButton(type: UIButtonType.System) as UIButton
+        let seeMyRecipesButton = UIButton()
         seeMyRecipesButton.frame = CGRect(x: 100, y: 100, width: 50, height: 50)
         seeMyRecipesButton.backgroundColor = UIColor.orangeColor()
         seeMyRecipesButton.setTitle("See My Recipes", forState: UIControlState.Normal)
@@ -31,7 +31,7 @@ class MenuScreen: UIViewController
         self.view.addSubview(seeMyRecipesButton)
         
         // Set up "add Recipe" Button
-        let addRecipeButton = UIButton(type: UIButtonType.System) as UIButton
+      let addRecipeButton = UIButton(type: UIButtonType.System)
         addRecipeButton.frame = CGRect(x: 100, y: 200, width: 100, height: 100)
         addRecipeButton.backgroundColor = UIColor.orangeColor()
         addRecipeButton.setTitle("Add Recipe", forState: UIControlState.Normal)
