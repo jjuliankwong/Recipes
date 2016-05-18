@@ -28,7 +28,7 @@ class InitScreen: UIViewController
         goToMenuScreen.frame = CGRect(x: 0, y: 0, width: 400, height: 500)
         goToMenuScreen.backgroundColor = UIColor.orangeColor()
         goToMenuScreen.setTitle("goToMenuScreen", forState: UIControlState.Normal)
-        goToMenuScreen.addTarget(self, action: Selector("goToMenuScreen"), forControlEvents: UIControlEvents.TouchUpInside)
+        goToMenuScreen.addTarget(self, action: "goToMenuScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(goToMenuScreen)
     }
   
@@ -45,9 +45,9 @@ class InitScreen: UIViewController
         */
         
 
-       // let menuScreen:MenuScreen = MenuScreen()
+       let menuScreen:MenuScreen = MenuScreen()
         
-        //self.presentViewController(menuScreen, animated: true, completion: nil)
+       self.presentViewController(menuScreen, animated: true, completion: nil)
         
     }
     
