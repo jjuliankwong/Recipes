@@ -47,7 +47,9 @@ class MenuScreen: UIViewController
 
     func goToRecipeScreen(sender: UIButton!)
     {
+        let myRecipesScreen:MyRecipesScreen = MyRecipesScreen()
         
+        self.presentViewController(myRecipesScreen, animated: true, completion: nil)
     }
     
     func addRecipeScreen(sender: UIButton!)
