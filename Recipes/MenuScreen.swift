@@ -27,7 +27,7 @@ class MenuScreen: UIViewController
         seeMyRecipesButton.frame = CGRect(x: 100, y: 100, width: 50, height: 50)
         seeMyRecipesButton.backgroundColor = UIColor.orangeColor()
         seeMyRecipesButton.setTitle("See My Recipes", forState: UIControlState.Normal)
-        seeMyRecipesButton.addTarget(self, action: "goToRecipeScreen", forControlEvents: UIControlEvents.TouchUpInside)
+        seeMyRecipesButton.addTarget(self, action: "goToRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(seeMyRecipesButton)
         
         // Set up "add Recipe" Button
@@ -35,7 +35,7 @@ class MenuScreen: UIViewController
         addRecipeButton.frame = CGRect(x: 100, y: 200, width: 100, height: 100)
         addRecipeButton.backgroundColor = UIColor.orangeColor()
         addRecipeButton.setTitle("Add Recipe", forState: UIControlState.Normal)
-        addRecipeButton.addTarget(self, action: "AddRecipeScreen", forControlEvents: UIControlEvents.TouchUpInside)
+        addRecipeButton.addTarget(self, action: "addRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(addRecipeButton)
         
     }
@@ -49,5 +49,12 @@ class MenuScreen: UIViewController
     {
         
     }
+    
+    func addRecipeScreen(sender: UIButton!)
+    {
+        
+    }
+    
+    
     
 }
