@@ -35,7 +35,7 @@ class MenuScreen: UIViewController
         addRecipeButton.frame = CGRect(x: 100, y: 200, width: 100, height: 100)
         addRecipeButton.backgroundColor = UIColor.orangeColor()
         addRecipeButton.setTitle("Add Recipe", forState: UIControlState.Normal)
-        addRecipeButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+
         self.view.addSubview(addRecipeButton)
         
     }
