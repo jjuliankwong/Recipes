@@ -13,6 +13,8 @@ class InitScreen: UIViewController
     
     override func viewDidLoad()
     {
+        let screenWidth = 375
+        let screenHeight = 667
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -20,14 +22,15 @@ class InitScreen: UIViewController
         self.view.backgroundColor = UIColor.whiteColor()
         let logo = UIImage(named: "logo")
         let logoView = UIImageView(image: logo) //You don't want to forcefully unwrap this as there is no image named logo.
-        logoView.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
+        logoView.frame = CGRect(x: 75, y: 50, width: 225, height: 175)
         view.addSubview(logoView)
         
         // button to go to menu screen
-        let goToMenuScreen = UIButton(type: UIButtonType.System) as UIButton
-        goToMenuScreen.frame = CGRect(x: 0, y: 0, width: 400, height: 500)
-        goToMenuScreen.backgroundColor = UIColor.orangeColor()
-        goToMenuScreen.setTitle("goToMenuScreen", forState: UIControlState.Normal)
+        let goToMenuScreen = UIButton()
+        goToMenuScreen.frame = CGRect(x: screenWidth/4, y: screenHeight/2, width: screenWidth/2, height: screenHeight/10)
+        goToMenuScreen.layer.cornerRadius = 10
+        goToMenuScreen.backgroundColor = UIColor.blueColor()
+        goToMenuScreen.setTitle("Enter myRecipes", forState: UIControlState.Normal)
         goToMenuScreen.addTarget(self, action: "goToMenuScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(goToMenuScreen)
     }
