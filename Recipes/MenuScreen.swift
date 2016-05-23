@@ -8,6 +8,8 @@ import UIKit
 
 class MenuScreen: UIViewController
 {
+    let width = 375
+    let height = 667
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -19,21 +21,23 @@ class MenuScreen: UIViewController
         // Set up logo
         let logo = UIImage(named: "logo")
         let logoView = UIImageView(image: logo)
-        logoView.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
+        logoView.frame = CGRect(x: 75, y: 50, width: 225, height: 175)
         view.addSubview(logoView)
         
         // Set up "See My Recipes" Button
         let seeMyRecipesButton = UIButton()
-        seeMyRecipesButton.frame = CGRect(x: 100, y: 100, width: 50, height: 50)
-        seeMyRecipesButton.backgroundColor = UIColor.orangeColor()
+        seeMyRecipesButton.frame = CGRect(x: 50, y: 200, width: 275, height: 150)
+        seeMyRecipesButton.layer.cornerRadius = 10
+        seeMyRecipesButton.backgroundColor = UIColor.blueColor()
         seeMyRecipesButton.setTitle("See My Recipes", forState: UIControlState.Normal)
         seeMyRecipesButton.addTarget(self, action: "goToRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(seeMyRecipesButton)
         
         // Set up "add Recipe" Button
-      let addRecipeButton = UIButton(type: UIButtonType.System)
-        addRecipeButton.frame = CGRect(x: 100, y: 200, width: 100, height: 100)
-        addRecipeButton.backgroundColor = UIColor.orangeColor()
+      let addRecipeButton = UIButton()
+        addRecipeButton.frame = CGRect(x: 50, y: 400, width: 275, height: 150)
+        addRecipeButton.layer.cornerRadius = 10
+        addRecipeButton.backgroundColor = UIColor.blueColor()
         addRecipeButton.setTitle("Add Recipe", forState: UIControlState.Normal)
         addRecipeButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(addRecipeButton)
