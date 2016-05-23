@@ -78,7 +78,7 @@ class NewRecipeScreen: UIViewController
         sandwhichButton.layer.cornerRadius = 10
         sandwhichButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         sandwhichButton.backgroundColor = UIColor.blueColor()
-        sandwhichButton.setTitle("Sandwhich Recipe", forState: UIControlState.Normal)
+        sandwhichButton.setTitle("Sandwich Recipe", forState: UIControlState.Normal)
         //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(sandwhichButton)
         
