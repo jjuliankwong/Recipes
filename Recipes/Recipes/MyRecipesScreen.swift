@@ -22,7 +22,7 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.frame = CGRect(x: 0, y: 0, width: 320, height: 568)
+        tableView.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(self.tableView)
         

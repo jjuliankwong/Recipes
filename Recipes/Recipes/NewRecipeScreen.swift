@@ -10,11 +10,14 @@ import UIKit
 
 class NewRecipeScreen: UIViewController
 {
+    var recipeType: String = ""
+    
     override func viewDidLoad()
     {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = 375
         let screenHeight = 667
+        
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,8 +41,9 @@ class NewRecipeScreen: UIViewController
         appetizerButton.layer.cornerRadius = 10
         appetizerButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         appetizerButton.backgroundColor = UIColor.blueColor()
+        recipeType = "Appetizer"
         appetizerButton.setTitle("Appetizer Recipe", forState: UIControlState.Normal)
-        appetizerButton.addTarget(self, action: "makeAppetizerRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
+        appetizerButton.addTarget(self, action: "makeNewRecipe", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(appetizerButton)
         
         // Set up Bread Button
@@ -72,7 +76,7 @@ class NewRecipeScreen: UIViewController
         //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(saladButton)
         
-        // Set up Sandwhich Button
+        // Set up Sandwich Button
         let sandwhichButton = UIButton()
         sandwhichButton.frame = CGRect(x: 133, y: 300, width: 110, height: 40)
         sandwhichButton.layer.cornerRadius = 10
@@ -149,11 +153,6 @@ class NewRecipeScreen: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
-    func makeAppetizerRecipe(sender: UIButton!)
-    {
-        
-    }
-    
     func goToMenuScreen (sender: UIButton!)
     {
         let menuScreen:MenuScreen = MenuScreen()
@@ -162,6 +161,14 @@ class NewRecipeScreen: UIViewController
 
     }
     
+    func makeNewRecipe(sender: UIButton!)
+    {
+       let newRecipe = Recipe(recipeType: recipeType)
+        //goes to next recipe screen
+        let nextScreen: NewRecipeScreen2 = NewRecipeScreen2(newRecipe)
+        self.presentViewController(nextScreen, animated: true, completion: : nil)
+        
+    }
 
 }
         
