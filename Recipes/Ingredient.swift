@@ -15,11 +15,23 @@ public class Ingredient
     var amountType: String
     var type: String
     
-    init(amountIn: Int, amountTypeIn: String, typeIn: String)
+    init()
+    {
+
+    }
+    
+    func addType (typeIn: String)
+    {
+        type = typeIn
+    }
+    
+    func addAmount (amountIn: Int)
     {
         amount = amountIn
+    }
+    
+    func addAmountType (amountTypeIn: String)
+    {
         amountType = amountTypeIn
-        type = typeIn
-
     }
 }
