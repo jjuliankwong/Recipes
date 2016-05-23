@@ -26,6 +26,15 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(self.tableView)
         
+        // Set up Menu Button
+        let menuButton = UIButton()
+        menuButton.frame = CGRect(x: 10, y: 20, width: 60, height: 30)
+        menuButton.layer.cornerRadius = 10
+        menuButton.backgroundColor = UIColor.blueColor()
+        menuButton.titleLabel!.font =  UIFont(name: "Georgia", size: 17)
+        menuButton.setTitle("Menu", forState: UIControlState.Normal)
+        menuButton.addTarget(self, action: "goToMenuScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(menuButton)
         
     }
     
@@ -49,6 +58,14 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         print("You selected cell #\(indexPath.row)!")
+    }
+    
+    func goToMenuScreen (sender: UIButton!)
+    {
+        let menuScreen:MenuScreen = MenuScreen()
+        
+        self.presentViewController(menuScreen, animated: true, completion: nil)
+        
     }
     
     
