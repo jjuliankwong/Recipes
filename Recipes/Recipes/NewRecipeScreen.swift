@@ -132,6 +132,16 @@ class NewRecipeScreen: UIViewController
         //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(sauceButton)
         
+        // Set up Menu Button
+        let menuButton = UIButton()
+        menuButton.frame = CGRect(x: 10, y: 20, width: 60, height: 30)
+        menuButton.layer.cornerRadius = 10
+        menuButton.backgroundColor = UIColor.blueColor()
+        menuButton.titleLabel!.font =  UIFont(name: "Georgia", size: 17)
+        menuButton.setTitle("Menu", forState: UIControlState.Normal)
+        menuButton.addTarget(self, action: "goToMenuScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(menuButton)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -142,6 +152,14 @@ class NewRecipeScreen: UIViewController
     func makeAppetizerRecipe(sender: UIButton!)
     {
         
+    }
+    
+    func goToMenuScreen (sender: UIButton!)
+    {
+        let menuScreen:MenuScreen = MenuScreen()
+        
+        self.presentViewController(menuScreen, animated: true, completion: nil)
+
     }
     
 

@@ -26,7 +26,7 @@ class MenuScreen: UIViewController
         
         // Set up "See My Recipes" Button
         let seeMyRecipesButton = UIButton()
-        seeMyRecipesButton.frame = CGRect(x: 50, y: 200, width: 275, height: 150)
+        seeMyRecipesButton.frame = CGRect(x: 50, y: 225, width: 275, height: 150)
         seeMyRecipesButton.layer.cornerRadius = 10
         seeMyRecipesButton.backgroundColor = UIColor.blueColor()
         seeMyRecipesButton.setTitle("See My Recipes", forState: UIControlState.Normal)
