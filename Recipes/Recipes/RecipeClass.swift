@@ -11,11 +11,16 @@ import UIKit
 
 public class Recipe
 {
-    var ingredients: [Ingredient]
-    var instructions: [String]
-    let recipeType: [String]
+    var ingredients: [Ingredient] = []
+    var instructions: [String] = []
+    let recipeType: String
     
-    init(ingredients: [Ingredient], instructions: [String], recipeType: [String])
+    init(recipeType: String)
+    {
+        self.recipeType = recipeType
+    }
+   
+    init(ingredients: [Ingredient], instructions: [String], recipeType: String)
     {
         self.ingredients = ingredients
         self.instructions = instructions
