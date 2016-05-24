@@ -42,7 +42,7 @@ class NewRecipeScreen: UIViewController
         appetizerButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         appetizerButton.backgroundColor = UIColor.blueColor()
         appetizerButton.setTitle("Appetizer Recipe", forState: UIControlState.Normal)
-        appetizerButton.addTarget(self, action: "makeNewRecipe", forControlEvents: UIControlEvents.TouchUpInside)
+        appetizerButton.addTarget(self, action: "makeNewRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(appetizerButton)
         
         // Set up Bread Button
@@ -164,8 +164,8 @@ class NewRecipeScreen: UIViewController
     {
        //let newRecipe = Recipe(recipeType: recipeType)
         //goes to next recipe screen
-        let nextScreen: NewRecipeScreen2 = NewRecipeScreen2()
-        self.presentViewController(nextScreen, animated: true, completion: nil)
+        let newRecipeScreen2: NewRecipeScreen2 = NewRecipeScreen2()
+        self.presentViewController(newRecipeScreen2, animated: true, completion: nil)
         
     }
 
