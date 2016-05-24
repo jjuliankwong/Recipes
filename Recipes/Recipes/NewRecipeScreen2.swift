@@ -22,12 +22,17 @@ class NewRecipeScreen2: UIViewController
     
     override func viewDidLoad()
     {
-    
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // Set background
         self.view.backgroundColor = UIColor.whiteColor()
+        
+         // Logo
+        let logo = UIImage(named: "logo")
+        let logoView = UIImageView(image: logo)
+        logoView.frame = CGRect(x: 75, y: 50, width: 225, height: 175)
+        view.addSubview(logoView)
         
         // Set up Menu Button
         let menuButton = UIButton()
@@ -50,7 +55,7 @@ class NewRecipeScreen2: UIViewController
         self.view.addSubview(recipeTypeLabel)
         
         // Set up Text Field for Ingredient Name
-        ingredientNameTextField.frame = CGRectMake(20, 100, 300, 40)
+        ingredientNameTextField.frame = CGRectMake(20, 250, 300, 40)
         ingredientNameTextField.placeholder = "Enter ingredient name Here"
         ingredientNameTextField.font = UIFont.systemFontOfSize(15)
         ingredientNameTextField.borderStyle = UITextBorderStyle.RoundedRect
@@ -63,7 +68,7 @@ class NewRecipeScreen2: UIViewController
         self.view.addSubview(ingredientNameTextField)
         
         // Set up Text Field for Ingredient Amount
-        ingredientAmountTextField.frame = CGRectMake(20, 150, 100, 40)
+        ingredientAmountTextField.frame = CGRectMake(20, 300, 300, 40)
         ingredientAmountTextField.placeholder = "Enter ingredient amount here"
         ingredientAmountTextField.font = UIFont.systemFontOfSize(15)
         ingredientAmountTextField.borderStyle = UITextBorderStyle.RoundedRect
@@ -76,7 +81,7 @@ class NewRecipeScreen2: UIViewController
         self.view.addSubview(ingredientAmountTextField)
         
         // Set up Text Field for Ingredient Unit
-        ingredientUnitTextField.frame = CGRectMake(20, 140, 150, 40)
+        ingredientUnitTextField.frame = CGRectMake(20, 350, 300, 40)
         ingredientUnitTextField.placeholder = "Enter ingredient unit here"
         ingredientUnitTextField.font = UIFont.systemFontOfSize(15)
         ingredientUnitTextField.borderStyle = UITextBorderStyle.RoundedRect
@@ -91,7 +96,7 @@ class NewRecipeScreen2: UIViewController
         
         // Set up addIngredientButton
         let addIngredientButton = UIButton()
-        addIngredientButton.frame = CGRect(x: 200, y: 150, width: 40, height: 40)
+        addIngredientButton.frame = CGRect(x: 137.5, y: 400, width: 50, height: 50)
         addIngredientButton.layer.cornerRadius = 10
         addIngredientButton.backgroundColor = UIColor.blueColor()
         addIngredientButton.setTitle("+", forState: UIControlState.Normal)
@@ -102,7 +107,6 @@ class NewRecipeScreen2: UIViewController
 
     func addIngredient (sender: UIButton!)
     {
-    
         let ingredientName: String? = self.ingredientNameTextField.text
         //let ingredientAmount: Int? = self.ingredientAmountTextField.text as Int
         let ingredientUnit: String? = self.ingredientUnitTextField.text
@@ -112,12 +116,7 @@ class NewRecipeScreen2: UIViewController
         ingredient.setAmountUnit(ingredientUnit!)
         recipe.addIngredient(ingredient)
     }
-    
-    func ingredientAmountTextFieldDidEndEditing(ingredientAmountTextField: UITextField) -> String
-    {
-        print("TextField did end editing method called")
-        return ingredientAmountTextField.text!
-    }
+
 
     func goToMenuScreen (sender: UIButton!)
     {
