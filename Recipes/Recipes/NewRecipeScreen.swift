@@ -10,7 +10,7 @@ import UIKit
 
 class NewRecipeScreen: UIViewController
 {
-    var recipeType: String = ""
+    static var recipeType: String = ""
     
     override func viewDidLoad()
     {
@@ -41,7 +41,6 @@ class NewRecipeScreen: UIViewController
         appetizerButton.layer.cornerRadius = 10
         appetizerButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         appetizerButton.backgroundColor = UIColor.blueColor()
-        recipeType = "Appetizer"
         appetizerButton.setTitle("Appetizer Recipe", forState: UIControlState.Normal)
         appetizerButton.addTarget(self, action: "makeNewRecipe", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(appetizerButton)
@@ -163,10 +162,10 @@ class NewRecipeScreen: UIViewController
     
     func makeNewRecipe(sender: UIButton!)
     {
-       let newRecipe = Recipe(recipeType: recipeType)
+       //let newRecipe = Recipe(recipeType: recipeType)
         //goes to next recipe screen
-        let nextScreen: NewRecipeScreen2 = NewRecipeScreen2(newRecipe)
-        self.presentViewController(nextScreen, animated: true, completion: : nil)
+        let nextScreen: NewRecipeScreen2 = NewRecipeScreen2()
+        self.presentViewController(nextScreen, animated: true, completion: nil)
         
     }
 
