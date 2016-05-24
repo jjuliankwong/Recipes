@@ -36,4 +36,9 @@ public class Recipe
     {
         instructions.append(instructionIn)
     }
+    
+    func getRecipeType() -> String
+    {
+        return recipeType
+    }
 }

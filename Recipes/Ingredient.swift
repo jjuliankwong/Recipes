@@ -11,27 +11,27 @@ import UIKit
 
 public class Ingredient
 {
-    var amount: Int
-    var amountType: String
-    var type: String
+    var amount: Int = 0
+    var amountUnit: String = ""
+    var name: String = ""
     
     init()
     {
 
     }
     
-    func addType (typeIn: String)
+    func setName (nameIn: String)
     {
-        type = typeIn
+        name = nameIn
     }
     
-    func addAmount (amountIn: Int)
+    func setAmount (amountIn: Int)
     {
         amount = amountIn
     }
     
-    func addAmountType (amountTypeIn: String)
+    func setAmountUnit (amountUnitIn: String)
     {
-        amountType = amountTypeIn
+        amountUnit = amountUnitIn
     }
 }
