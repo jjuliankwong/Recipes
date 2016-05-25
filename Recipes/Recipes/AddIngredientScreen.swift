@@ -8,12 +8,12 @@
 
 import UIKit
 
-class NewRecipeScreen2: UIViewController
+class AddIngredientScreen: UIViewController
 {
     let width = 375
     let height = 667
     
-    var recipe: Recipe = Recipe(recipeType: NewRecipeScreen.recipeType)
+    var recipe: Recipe? = nil
     
     var ingredient: Ingredient = Ingredient()
     let ingredientNameTextField: UITextField = UITextField()
@@ -28,10 +28,20 @@ class NewRecipeScreen2: UIViewController
         // Set background
         self.view.backgroundColor = UIColor.whiteColor()
         
-         // Logo
+        // Set up Title
+        let recipeTypeLabel: UILabel = UILabel()
+        recipeTypeLabel.frame = CGRectMake(100, 40, 175, 50)
+        recipeTypeLabel.font = UIFont(name: "Georgia", size: 15)
+        recipeTypeLabel.backgroundColor = UIColor.whiteColor()
+        recipeTypeLabel.textColor = UIColor.blackColor()
+        recipeTypeLabel.textAlignment = NSTextAlignment.Center
+        recipeTypeLabel.text = recipe!.getRecipeType() +  " Recipe"
+        self.view.addSubview(recipeTypeLabel)
+        
+        // Logo
         let logo = UIImage(named: "logo")
         let logoView = UIImageView(image: logo)
-        logoView.frame = CGRect(x: 75, y: 50, width: 225, height: 175)
+        logoView.frame = CGRect(x: 75, y: 75, width: 225, height: 175)
         view.addSubview(logoView)
         
         // Set up Menu Button
@@ -44,15 +54,6 @@ class NewRecipeScreen2: UIViewController
         menuButton.addTarget(self, action: "goToMenuScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(menuButton)
         
-        // Set up Title
-        let recipeTypeLabel: UILabel = UILabel()
-        recipeTypeLabel.frame = CGRectMake(100, 20, 175, 50)
-        recipeTypeLabel.font = UIFont(name: "Georgia", size: 15)
-        recipeTypeLabel.backgroundColor = UIColor.whiteColor()
-        recipeTypeLabel.textColor = UIColor.blackColor()
-        recipeTypeLabel.textAlignment = NSTextAlignment.Center
-        recipeTypeLabel.text = recipe.getRecipeType() +  "Recipe"
-        self.view.addSubview(recipeTypeLabel)
         
         // Set up Text Field for Ingredient Name
         ingredientNameTextField.frame = CGRectMake(20, 250, 300, 40)
@@ -96,12 +97,21 @@ class NewRecipeScreen2: UIViewController
         
         // Set up addIngredientButton
         let addIngredientButton = UIButton()
-        addIngredientButton.frame = CGRect(x: 137.5, y: 400, width: 50, height: 50)
+        addIngredientButton.frame = CGRect(x: 162.5, y: 400, width: 50, height: 50)
         addIngredientButton.layer.cornerRadius = 10
         addIngredientButton.backgroundColor = UIColor.blueColor()
         addIngredientButton.setTitle("+", forState: UIControlState.Normal)
         addIngredientButton.addTarget(self, action: "addIngredient:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(addIngredientButton)
+        
+        // Set up goToInstructionScreenButton
+        let goToInstructionScreenButton = UIButton()
+        goToInstructionScreenButton.frame = CGRect(x: 215, y: 20, width: 150, height: 30)
+        goToInstructionScreenButton.layer.cornerRadius = 10
+        goToInstructionScreenButton.backgroundColor = UIColor.blueColor()
+        goToInstructionScreenButton.setTitle("Add Instructions", forState: UIControlState.Normal)
+        goToInstructionScreenButton.addTarget(self, action: "goToAddInstructionsScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(goToInstructionScreenButton)
         
     }
 
@@ -114,14 +124,26 @@ class NewRecipeScreen2: UIViewController
         ingredient.setName(ingredientName!)
         ingredient.setAmount(1)
         ingredient.setAmountUnit(ingredientUnit!)
-        recipe.addIngredient(ingredient)
+        recipe!.addIngredient(ingredient)
+        
+        ingredientNameTextField.text = ""
+        ingredientAmountTextField.text = ""
+        ingredientUnitTextField.text = ""
+        
+    }
+    
+    func goToAddInstructionsScreen (sender: UIButton!)
+    {
+        let addInstructionsScreen: AddInstructionsScreen = AddInstructionsScreen()
+        addInstructionsScreen.recipe = self.recipe!
+        self.presentViewController(addInstructionsScreen, animated: true, completion: nil)
     }
 
 
     func goToMenuScreen (sender: UIButton!)
     {
         let menuScreen:MenuScreen = MenuScreen()
-        
+
         self.presentViewController(menuScreen, animated: true, completion: nil)
         
     }

@@ -10,6 +10,8 @@ class MenuScreen: UIViewController
 {
     let width = 375
     let height = 667
+    var recipe : Recipe? = nil
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

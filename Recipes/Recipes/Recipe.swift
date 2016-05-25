@@ -13,11 +13,10 @@ public class Recipe
 {
     var ingredients: [Ingredient] = []
     var instructions: [String] = []
-    let recipeType: String
+    var recipeType: String = ""
     
-    init(recipeType: String)
+    init()
     {
-        self.recipeType = recipeType
     }
    
     init(ingredients: [Ingredient], instructions: [String], recipeType: String)
@@ -25,6 +24,11 @@ public class Recipe
         self.ingredients = ingredients
         self.instructions = instructions
         self.recipeType = recipeType
+    }
+    
+    func setRecipeType(recipeTypeIn: String)
+    {
+        self.recipeType = recipeTypeIn
     }
     
     func addIngredient(ingredientIn: Ingredient)
