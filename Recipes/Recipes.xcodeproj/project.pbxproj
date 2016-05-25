@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		160CE1661CF5E9FA00FA2813 /* AddInstructionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160CE1651CF5E9FA00FA2813 /* AddInstructionsScreen.swift */; };
+		160CE1681CF61BD100FA2813 /* NameRecipeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160CE1671CF61BD100FA2813 /* NameRecipeScreen.swift */; };
 		1636B2811CF398DD001E2FED /* AddIngredientScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1636B2801CF398DD001E2FED /* AddIngredientScreen.swift */; };
 		1681935C1CE15C6C00F0BAD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1681935B1CE15C6C00F0BAD1 /* AppDelegate.swift */; };
 		168193631CE15C6C00F0BAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168193621CE15C6C00F0BAD1 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		160CE1651CF5E9FA00FA2813 /* AddInstructionsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInstructionsScreen.swift; sourceTree = "<group>"; };
+		160CE1671CF61BD100FA2813 /* NameRecipeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameRecipeScreen.swift; sourceTree = "<group>"; };
 		1636B2801CF398DD001E2FED /* AddIngredientScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIngredientScreen.swift; sourceTree = "<group>"; };
 		168193581CE15C6C00F0BAD1 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1681935B1CE15C6C00F0BAD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				82BDF2911CE286DC002C82B6 /* Ingredient.swift */,
 				168193891CE15C9000F0BAD1 /* MenuScreen.swift */,
 				1681938F1CECD11500F0BAD1 /* NewRecipeScreen.swift */,
+				160CE1671CF61BD100FA2813 /* NameRecipeScreen.swift */,
 				1636B2801CF398DD001E2FED /* AddIngredientScreen.swift */,
 				160CE1651CF5E9FA00FA2813 /* AddInstructionsScreen.swift */,
 				411733E51CE2857100726866 /* Recipe.swift */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160CE1681CF61BD100FA2813 /* NameRecipeScreen.swift in Sources */,
 				1681938A1CE15C9000F0BAD1 /* MenuScreen.swift in Sources */,
 				168193901CECD11500F0BAD1 /* NewRecipeScreen.swift in Sources */,
 				82BDF2921CE286DC002C82B6 /* Ingredient.swift in Sources */,
