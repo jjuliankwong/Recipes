@@ -14,6 +14,7 @@ public class Recipe
     var ingredients: [Ingredient] = []
     var instructions: [String] = []
     var recipeType: String = ""
+    var recipeName: String = ""
     
     init()
     {
@@ -44,5 +45,10 @@ public class Recipe
     func getRecipeType() -> String
     {
         return recipeType
+    }
+    
+    func setRecipeName(nameIn: String)
+    {
+        recipeName = nameIn
     }
 }

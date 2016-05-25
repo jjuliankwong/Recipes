@@ -26,10 +26,20 @@ class AddInstructionsScreen: UIViewController
         // Set background
         self.view.backgroundColor = UIColor.whiteColor()
         
+        // Set up Title
+        let recipeTypeLabel: UILabel = UILabel()
+        recipeTypeLabel.frame = CGRectMake(37.5, 250, 300, 50)
+        recipeTypeLabel.font = UIFont(name: "Georgia", size: 15)
+        recipeTypeLabel.backgroundColor = UIColor.whiteColor()
+        recipeTypeLabel.textColor = UIColor.blackColor()
+        recipeTypeLabel.textAlignment = NSTextAlignment.Center
+        recipeTypeLabel.text = "Press the + button to add each instruction"
+        self.view.addSubview(recipeTypeLabel)
+        
         // Logo
         let logo = UIImage(named: "logo")
         let logoView = UIImageView(image: logo)
-        logoView.frame = CGRect(x: 75, y: 50, width: 225, height: 175)
+        logoView.frame = CGRect(x: 75, y: 75, width: 225, height: 175)
         view.addSubview(logoView)
         
         // Set up Menu Button
@@ -42,18 +52,8 @@ class AddInstructionsScreen: UIViewController
         menuButton.addTarget(self, action: "goToMenuScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(menuButton)
         
-        // Set up Title
-        let recipeTypeLabel: UILabel = UILabel()
-        recipeTypeLabel.frame = CGRectMake(37.5, 40, 300, 50)
-        recipeTypeLabel.font = UIFont(name: "Georgia", size: 15)
-        recipeTypeLabel.backgroundColor = UIColor.whiteColor()
-        recipeTypeLabel.textColor = UIColor.blackColor()
-        recipeTypeLabel.textAlignment = NSTextAlignment.Center
-        recipeTypeLabel.text = "Press the + button to add each instruction"
-        self.view.addSubview(recipeTypeLabel)
-        
         // Set up Text Field for instruction
-        instructionTextField.frame = CGRectMake(20, 250, 300, 40)
+        instructionTextField.frame = CGRectMake(20, 300, 300, 40)
         instructionTextField.placeholder = "Enter instruction here"
         instructionTextField.font = UIFont.systemFontOfSize(15)
         instructionTextField.borderStyle = UITextBorderStyle.RoundedRect
@@ -65,12 +65,21 @@ class AddInstructionsScreen: UIViewController
         self.view.addSubview(instructionTextField)
         
         // Set up addIngredientButton
-        addInstructionButton.frame = CGRect(x: 137.5, y: 400, width: 50, height: 50)
+        addInstructionButton.frame = CGRect(x: 162.5, y: 350, width: 50, height: 50)
         addInstructionButton.layer.cornerRadius = 10
         addInstructionButton.backgroundColor = UIColor.blueColor()
         addInstructionButton.setTitle("+", forState: UIControlState.Normal)
         addInstructionButton.addTarget(self, action: "addInstruction:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(addInstructionButton)
+        
+        // Set up finishRecipeButton
+        let finishRecipeButton = UIButton()
+        finishRecipeButton.frame = CGRect(x: 215, y: 20, width: 150, height: 30)
+        finishRecipeButton.layer.cornerRadius = 10
+        finishRecipeButton.backgroundColor = UIColor.blueColor()
+        finishRecipeButton.setTitle("Finish Recipe", forState: UIControlState.Normal)
+        finishRecipeButton.addTarget(self, action: "finishRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(finishRecipeButton)
         
     }
     
@@ -79,9 +88,12 @@ class AddInstructionsScreen: UIViewController
         let instruction: String? = self.instructionTextField.text
         recipe!.addInstruction(instruction!)
         instructionTextField.text = ""
-        
     }
     
+    func finishRecipe (sender: UIButton!)
+    {
+        
+    }
     
     func goToMenuScreen (sender: UIButton!)
     {
