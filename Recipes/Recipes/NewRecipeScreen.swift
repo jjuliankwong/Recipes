@@ -225,10 +225,10 @@ class NewRecipeScreen: UIViewController
     {
        //let newRecipe = Recipe(recipeType: recipeType)
         //goes to next recipe screen
-        let addIngredientScreen: AddIngredientScreen = AddIngredientScreen()
-        addIngredientScreen.recipe = self.recipe
+        let nameRecipeScreen: NameRecipeScreen = NameRecipeScreen()
+        nameRecipeScreen.recipe = self.recipe
 
-        self.presentViewController(addIngredientScreen, animated: true, completion: nil)
+        self.presentViewController(nameRecipeScreen, animated: true, completion: nil)
         
     }
 
