@@ -10,7 +10,7 @@ import UIKit
 
 class NewRecipeScreen: UIViewController
 {
-    static var recipeType: String = ""
+    let recipe: Recipe = Recipe()
     
     override func viewDidLoad()
     {
@@ -42,7 +42,7 @@ class NewRecipeScreen: UIViewController
         appetizerButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         appetizerButton.backgroundColor = UIColor.blueColor()
         appetizerButton.setTitle("Appetizer Recipe", forState: UIControlState.Normal)
-        appetizerButton.addTarget(self, action: "makeNewRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
+        appetizerButton.addTarget(self, action: "makeAppetizerRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(appetizerButton)
         
         // Set up Bread Button
@@ -52,7 +52,7 @@ class NewRecipeScreen: UIViewController
         breadButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         breadButton.backgroundColor = UIColor.blueColor()
         breadButton.setTitle("Bread Recipe", forState: UIControlState.Normal)
-        //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        breadButton.addTarget(self, action: "makeBreadRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(breadButton)
         
         // Set up Breakfast Button
@@ -62,7 +62,7 @@ class NewRecipeScreen: UIViewController
         breakfastButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         breakfastButton.backgroundColor = UIColor.blueColor()
         breakfastButton.setTitle("Breakfast Recipe", forState: UIControlState.Normal)
-        //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        breakfastButton.addTarget(self, action: "makeBreakfastRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(breakfastButton)
         
         // Set up Salad Button
@@ -72,7 +72,7 @@ class NewRecipeScreen: UIViewController
         saladButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         saladButton.backgroundColor = UIColor.blueColor()
         saladButton.setTitle("Salad Recipe", forState: UIControlState.Normal)
-        //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        saladButton.addTarget(self, action: "makeSaladRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(saladButton)
         
         // Set up Sandwich Button
@@ -82,7 +82,7 @@ class NewRecipeScreen: UIViewController
         sandwhichButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         sandwhichButton.backgroundColor = UIColor.blueColor()
         sandwhichButton.setTitle("Sandwich Recipe", forState: UIControlState.Normal)
-        //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        sandwhichButton.addTarget(self, action: "makeSandwhichRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(sandwhichButton)
         
         // Set up Soup Button
@@ -91,8 +91,8 @@ class NewRecipeScreen: UIViewController
         soupButton.layer.cornerRadius = 10
         soupButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         soupButton.backgroundColor = UIColor.blueColor()
-        soupButton.setTitle("Bread Recipe", forState: UIControlState.Normal)
-        //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        soupButton.setTitle("Soup Recipe", forState: UIControlState.Normal)
+        soupButton.addTarget(self, action: "makeSoupRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(soupButton)
         
         // Set up Entree Button
@@ -102,7 +102,7 @@ class NewRecipeScreen: UIViewController
         entreeButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         entreeButton.backgroundColor = UIColor.blueColor()
         entreeButton.setTitle("Entree Recipe", forState: UIControlState.Normal)
-        //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        entreeButton.addTarget(self, action: "makeEntreeRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(entreeButton)
         
         // Set up Dessert Button
@@ -112,7 +112,7 @@ class NewRecipeScreen: UIViewController
         dessertButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         dessertButton.backgroundColor = UIColor.blueColor()
         dessertButton.setTitle("Dessert Recipe", forState: UIControlState.Normal)
-        //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        dessertButton.addTarget(self, action: "makeDessertRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(dessertButton)
         
         // Set up Drink Button
@@ -122,7 +122,7 @@ class NewRecipeScreen: UIViewController
         drinkButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         drinkButton.backgroundColor = UIColor.blueColor()
         drinkButton.setTitle("Drink Recipe", forState: UIControlState.Normal)
-        //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        drinkButton.addTarget(self, action: "makeDrinkRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(drinkButton)
         
         // Set up Sauce Button
@@ -132,7 +132,7 @@ class NewRecipeScreen: UIViewController
         sauceButton.titleLabel!.font =  UIFont(name: "Georgia", size: 12)
         sauceButton.backgroundColor = UIColor.blueColor()
         sauceButton.setTitle("Sauce Recipe", forState: UIControlState.Normal)
-        //appetizerButton.addTarget(self, action: "goToNewRecipeScreen:", forControlEvents: UIControlEvents.TouchUpInside)
+        sauceButton.addTarget(self, action: "makeSauceRecipe:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(sauceButton)
         
         // Set up Menu Button
@@ -145,11 +145,72 @@ class NewRecipeScreen: UIViewController
         menuButton.addTarget(self, action: "goToMenuScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(menuButton)
         
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func makeAppetizerRecipe (sender: UIButton!)
+    {
+        recipe.setRecipeType("Appetizer")
+        makeNewRecipe(sender)
+    }
+    
+    func makeBreadRecipe (sender: UIButton!)
+    {
+        recipe.setRecipeType("Bread")
+        makeNewRecipe(sender)
+    }
+    
+    func makeBreakfastRecipe (sender: UIButton!)
+    {
+        recipe.setRecipeType("Breakfast")
+        makeNewRecipe(sender)
+    }
+    
+    func makeSaladRecipe(sender: UIButton!)
+    {
+        recipe.setRecipeType("Salad")
+        makeNewRecipe(sender)
+    }
+    
+    func makeSandwhichRecipe(sender: UIButton!)
+    {
+        recipe.setRecipeType("Sandwhich")
+        makeNewRecipe(sender)
+    }
+    
+    func makeSoupRecipe(sender: UIButton!)
+    {
+        recipe.setRecipeType("Soup")
+        makeNewRecipe(sender)
+    }
+
+    func makeEntreeRecipe(sender: UIButton!)
+    {
+        recipe.setRecipeType("Entree")
+        makeNewRecipe(sender)
+    }
+    
+    func makeDessertRecipe(sender: UIButton!)
+    {
+        recipe.setRecipeType("Dessert")
+        makeNewRecipe(sender)
+    }
+    
+    func makeDrinkRecipe(sender: UIButton!)
+    {
+        recipe.setRecipeType("Drink")
+        makeNewRecipe(sender)
+    }
+    
+    func makeSauceRecipe(sender: UIButton!)
+    {
+        recipe.setRecipeType("Sauce")
+        makeNewRecipe(sender)
     }
     
     func goToMenuScreen (sender: UIButton!)
@@ -164,8 +225,10 @@ class NewRecipeScreen: UIViewController
     {
        //let newRecipe = Recipe(recipeType: recipeType)
         //goes to next recipe screen
-        let newRecipeScreen2: NewRecipeScreen2 = NewRecipeScreen2()
-        self.presentViewController(newRecipeScreen2, animated: true, completion: nil)
+        let addIngredientScreen: AddIngredientScreen = AddIngredientScreen()
+        addIngredientScreen.recipe = self.recipe
+
+        self.presentViewController(addIngredientScreen, animated: true, completion: nil)
         
     }
 
