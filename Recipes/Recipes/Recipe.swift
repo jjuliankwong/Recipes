@@ -51,4 +51,9 @@ public class Recipe
     {
         recipeName = nameIn
     }
+    
+    func getName() -> String
+    {
+        return recipeName
+    }
 }
