@@ -12,14 +12,15 @@ import UIKit
 class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     let tableView: UITableView = UITableView(frame: UIScreen.mainScreen().bounds, style:UITableViewStyle.Plain)
-    var recipes: [String] = []
+    var recipes: Recipe? = nil
+    var stringRecipes: [String] = []
     
     override func viewDidLoad()
     {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        stringRecipes.append(recipes!.getName())
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
@@ -41,15 +42,14 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView (tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
         
-        return self.recipes.count
+        return stringRecipes.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        
-        cell.textLabel?.text = self.recipes[indexPath.row]
+         let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+        cell.textLabel!.text = stringRecipes[indexPath.row]
         
         return cell
         
