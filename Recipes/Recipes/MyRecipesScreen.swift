@@ -15,15 +15,22 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     var recipes: Recipe? = nil
     var stringRecipes: [String] = []
     
+    let width = 375
+    let height = 667
+    
     override func viewDidLoad()
     {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Set background
+        self.view.backgroundColor = UIColor.whiteColor()
+        
         stringRecipes.append(recipes!.getName())
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
+        tableView.frame = CGRect(x: 0, y: 70, width: 375, height: 697)
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(self.tableView)
         
@@ -41,7 +48,6 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView (tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        
         return stringRecipes.count
     }
     
@@ -50,6 +56,14 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         
          let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
         cell.textLabel!.text = stringRecipes[indexPath.row]
+        
+        let button = UIButton(type: UIButtonType.System)
+        button.frame = CGRectMake(325, 0, 40, 40)
+        button.backgroundColor = UIColor.greenColor()
+        button.setTitle(">", forState: UIControlState.Normal)
+        button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        cell.addSubview(button)
         
         return cell
         
