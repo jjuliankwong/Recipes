@@ -20,12 +20,14 @@ public class Recipe
     {
     }
    
+    /*
     init(ingredients: [Ingredient], instructions: [String], recipeType: String)
     {
         self.ingredients = ingredients
         self.instructions = instructions
         self.recipeType = recipeType
     }
+ */
     
     func setRecipeType(recipeTypeIn: String)
     {
@@ -45,6 +47,16 @@ public class Recipe
     func getRecipeType() -> String
     {
         return recipeType
+    }
+    
+    func getIngredients() -> [Ingredient]
+    {
+        return ingredients
+    }
+    
+    func getInstructions() -> [String]
+    {
+        return instructions
     }
     
     func setRecipeName(nameIn: String)
