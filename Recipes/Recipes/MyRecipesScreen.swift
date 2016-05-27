@@ -8,10 +8,17 @@
 
 import Foundation
 import UIKit
+import Realm
 
 class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     let tableView: UITableView = UITableView(frame: UIScreen.mainScreen().bounds, style:UITableViewStyle.Plain)
+   
+    var permanentRecipes: RLMResults {
+        get {
+            return PermanentRecipe.allObjects()
+        }
+    }
     var recipes: Recipe? = nil
     var stringRecipes: [String] = []
     

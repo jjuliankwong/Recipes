@@ -9,28 +9,28 @@
 import Foundation
 import UIKit
 
-public class Ingredient
+public class Ingredient: NSObject
 {
     var amount: Int = 0
     var amountUnit: String = ""
     var name: String = ""
     
-    init()
+    override init()
     {
 
     }
     
-    func setName (nameIn: String)
+    func changeName (nameIn: String)
     {
         name = nameIn
     }
     
-    func setAmount (amountIn: Int)
+    func changeAmount (amountIn: Int)
     {
         amount = amountIn
     }
     
-    func setAmountUnit (amountUnitIn: String)
+    func changeAmountUnit (amountUnitIn: String)
     {
         amountUnit = amountUnitIn
     }

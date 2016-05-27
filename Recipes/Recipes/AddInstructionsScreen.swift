@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 class AddInstructionsScreen: UIViewController
 {
@@ -95,6 +96,16 @@ class AddInstructionsScreen: UIViewController
         let myRecipesScreen: MyRecipesScreen = MyRecipesScreen()
         myRecipesScreen.recipes = self.recipe!
         self.presentViewController(myRecipesScreen, animated: true, completion: nil)
+    }
+    
+    func storeRecipe()
+    {
+        let realm = RLMRealm.defaultRealm()
+        let permanentRecipe = PermanentRecipe(nameIn: (recipe?.getName())!, typeIn: (recipe?.getRecipeType())!, ingredientsIn: (recipe?.getIngredients())!, instructionsIn: (recipe?.getInstructions())!)
+
+        realm.addObject(permanentRecipe)
+        
+        
     }
     
     func goToMenuScreen (sender: UIButton!)
