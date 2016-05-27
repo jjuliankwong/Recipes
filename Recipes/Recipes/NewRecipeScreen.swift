@@ -18,9 +18,7 @@ class NewRecipeScreen: UIViewController
         let screenWidth = 375
         let screenHeight = 667
         
-        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         // Set background
         self.view.backgroundColor = UIColor.whiteColor()
@@ -153,6 +151,10 @@ class NewRecipeScreen: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    /***********
+     These next methods are the methods called when their respective buttons are pressed and make new recipes, with the recipe type set based upon the button pressed.
+     *********/
+    
     func makeAppetizerRecipe (sender: UIButton!)
     {
         recipe.setRecipeType("Appetizer")
@@ -218,9 +220,11 @@ class NewRecipeScreen: UIViewController
         let menuScreen:MenuScreen = MenuScreen()
         
         self.presentViewController(menuScreen, animated: true, completion: nil)
-
     }
     
+    /***********
+     This method actually creates a new recipe. It is called by makeBlankRecipe and creates a new recipe with the type specified.
+     *********/
     func makeNewRecipe(sender: UIButton!)
     {
        //let newRecipe = Recipe(recipeType: recipeType)
@@ -229,8 +233,6 @@ class NewRecipeScreen: UIViewController
         nameRecipeScreen.recipe = self.recipe
 
         self.presentViewController(nameRecipeScreen, animated: true, completion: nil)
-        
     }
-
 }
         

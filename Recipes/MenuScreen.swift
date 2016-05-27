@@ -12,10 +12,12 @@ class MenuScreen: UIViewController
     let height = 667
     var recipe : Recipe? = nil
     
+    /***********
+     This is the method that creates the menu screen and displays it. There is a logo like the previous screen, and two different buttons.  The "See My Recipes" button takes the user to a list that displays their created recipes, and the "add Recipe" button lets the user enter a screen to start creating a recipe.
+     *********/
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         // Set background
         self.view.backgroundColor = UIColor.whiteColor()
@@ -48,9 +50,11 @@ class MenuScreen: UIViewController
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    /***********
+     This method is called when the user presses See My Recipes button.  It takes the user to a new screen that is a list that displays all previously created recipes.
+     *********/
     func goToRecipeScreen(sender: UIButton!)
     {
         let myRecipesScreen:MyRecipesScreen = MyRecipesScreen()
@@ -58,6 +62,9 @@ class MenuScreen: UIViewController
         self.presentViewController(myRecipesScreen, animated: true, completion: nil)
     }
     
+    /***********
+     This method is called when the user presses Add Recipe button.  It takes the user to a new screen that allows the user to create a new Recipe based upon the type of recipe they want to create.
+     *********/
     func goToNewRecipeScreen(sender: UIButton!)
     {
         let newRecipeScreen:NewRecipeScreen = NewRecipeScreen()
