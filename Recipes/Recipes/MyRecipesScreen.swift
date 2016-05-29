@@ -9,17 +9,48 @@
 import Foundation
 import UIKit
 import Realm
+import RealmSwift
 
 class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     let tableView: UITableView = UITableView(frame: UIScreen.mainScreen().bounds, style:UITableViewStyle.Plain)
-   
-    var permanentRecipes: RLMResults {
-        get {
-            return PermanentRecipe.allObjects()
+    //var realm: Realm? = nil
+    let realm = try! Realm()
+    /*
+    var permanentRecipes: Results<(PermanentRecipe,,>)//: [PermanentRecipe]
+    {
+       get
+       {
+            return realm?.objects(PermanentRecipe)
+
+            //return PermanentRecipe.objects<T: PermanentRecipe
+            //let storedRecipes = PermanentRecipe.allObjects()
+            //var recipesToAccess: [PermanentRecipe] = []
+            //return Array(PermanentRecipe. allObjects())
+ 
+            /*
+            for (var i = 0; i < permanentRecipes.count; i++)
+            {
+                var uInt: UInt = UInt(i)
+                var uInt2: UInt = uInt
+                recipesToAccess.append(storedRecipes.objectAtIndex(uInt2) as! PermanentRecipe)
+            }
+ */
+            /*
+            for object: RLMObject in storedRecipes
+            {
+
+                permanentRecipes.append(object)
+    
+            }
+ */
+            
+            //return recipesToAccess
         }
     }
-    var recipes: Recipe? = nil
+    */
+    //var recipes: Recipe? = nil
+
     var stringRecipes: [String] = []
     
     let width = 375
@@ -27,14 +58,13 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad()
     {
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // Set background
         self.view.backgroundColor = UIColor.whiteColor()
         
-        stringRecipes.append(recipes!.getName())
+        // stringRecipes.append(recipes!.getName())
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = CGRect(x: 0, y: 70, width: 375, height: 697)
@@ -60,9 +90,12 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        let myRecipes = realm.objects(PermanentRecipe)
+
+        /*
         
-         let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
-        cell.textLabel!.text = stringRecipes[indexPath.row]
+        let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+        //cell.textLabel!.text = stringRecipes[indexPath.row]
         
         let button = UIButton(type: UIButtonType.System)
         button.frame = CGRectMake(325, 0, 40, 40)
@@ -73,8 +106,16 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         cell.addSubview(button)
         
         return cell
+ */
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath) as UITableViewCell
         
+        let index = UInt(indexPath.row)
+        let singlePermanentRecipe = myRecipes.first//permanentRecipes.objectAtIndex(index) as! PermanentRecipe
+        cell.textLabel!.text = singlePermanentRecipe!.getName()
+        
+        return cell
     }
+
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Realm
+import RealmSwift
 
 class AddInstructionsScreen: UIViewController
 {
@@ -93,17 +94,43 @@ class AddInstructionsScreen: UIViewController
     
     func finishRecipe (sender: UIButton!)
     {
+        
+        let realm = try! Realm()
+        
+        let permanentRecipe: PermanentRecipe = PermanentRecipe()
+        permanentRecipe.recipeName = (recipe?.getName())!
+        permanentRecipe.recipeType = (recipe?.getRecipeType())!
+        permanentRecipe.ingredients = (recipe?.getIngredients())!
+        permanentRecipe.instructions = (recipe?.getInstructions())!
+        /*
+         nameIn: (recipe?.getName())!, typeIn: (recipe?.getRecipeType())!, ingredientsIn: (recipe?.getIngredients())!, instructionsIn: (recipe?.getInstructions())!)
+         */
+        try! realm.write({
+            realm.add(permanentRecipe)
+        })
         let myRecipesScreen: MyRecipesScreen = MyRecipesScreen()
-        myRecipesScreen.recipes = self.recipe!
+        //myRecipesScreen.realm = realm
+        //myRecipesScreen.recipes = self.recipe!
         self.presentViewController(myRecipesScreen, animated: true, completion: nil)
+        
     }
     
     func storeRecipe()
     {
-        let realm = RLMRealm.defaultRealm()
-        let permanentRecipe = PermanentRecipe(nameIn: (recipe?.getName())!, typeIn: (recipe?.getRecipeType())!, ingredientsIn: (recipe?.getIngredients())!, instructionsIn: (recipe?.getInstructions())!)
-
-        realm.addObject(permanentRecipe)
+        
+        let realm: Realm = try! Realm()
+        let permanentRecipe: PermanentRecipe = PermanentRecipe()
+        permanentRecipe.recipeName = (recipe?.getName())!
+        permanentRecipe.recipeType = (recipe?.getRecipeType())!
+        permanentRecipe.ingredients = (recipe?.getIngredients())!
+        permanentRecipe.instructions = (recipe?.getInstructions())!
+        /*
+            nameIn: (recipe?.getName())!, typeIn: (recipe?.getRecipeType())!, ingredientsIn: (recipe?.getIngredients())!, instructionsIn: (recipe?.getInstructions())!)
+*/
+        try! realm.write({
+            realm.add(permanentRecipe)
+        })
+        //realm.addObject(permanentRecipe)
         
         
     }

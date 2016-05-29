@@ -9,14 +9,23 @@
 import Foundation
 import UIKit
 import Realm
+import RealmSwift
 
-public class PermanentRecipe: RLMObject
+public class PermanentRecipe: Object
 {
-    dynamic var ingredients: [Ingredient]
-    dynamic var instructions: [String]
-    dynamic var recipeType: String
-    dynamic var recipeName: String
-    
+    dynamic var ingredients: [Ingredient] = []
+    dynamic var instructions: [String] = []
+    dynamic var recipeType: String = ""
+    dynamic var recipeName: String = ""
+    /*
+    required override public init()
+    {
+        super.init()
+    }
+     
+*/
+
+  /*
     init(nameIn: String, typeIn: String, ingredientsIn: [Ingredient], instructionsIn: [String])
     {
         self.recipeName = nameIn
@@ -25,10 +34,10 @@ public class PermanentRecipe: RLMObject
         self.instructions = instructionsIn
         super.init()
     }
-    
-    
+ */
     func getName() -> String
     {
         return recipeName
     }
+ 
 }

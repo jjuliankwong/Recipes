@@ -121,9 +121,9 @@ class AddIngredientScreen: UIViewController
         //let ingredientAmount: Int? = self.ingredientAmountTextField.text as Int
         let ingredientUnit: String? = self.ingredientUnitTextField.text
         
-        ingredient.setName(ingredientName!)
-        ingredient.setAmount(1)
-        ingredient.setAmountUnit(ingredientUnit!)
+        ingredient.changeName(ingredientName!)
+        ingredient.changeAmount(1)
+        ingredient.changeAmountUnit(ingredientUnit!)
         recipe!.addIngredient(ingredient)
         
         ingredientNameTextField.text = ""
