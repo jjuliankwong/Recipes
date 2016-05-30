@@ -8,17 +8,15 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+import Realm
 
-public class Ingredient: NSObject
+/*
+public class Ingredient: RLMObject
 {
     var amount: Int = 0
     var amountUnit: String = ""
     var name: String = ""
-    
-    override init()
-    {
-
-    }
     
     func changeName (nameIn: String)
     {
@@ -35,3 +33,4 @@ public class Ingredient: NSObject
         amountUnit = amountUnitIn
     }
 }
+ */

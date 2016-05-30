@@ -19,6 +19,7 @@ class AddInstructionsScreen: UIViewController
 
     let instructionTextField: UITextField = UITextField()
     let addInstructionButton: UIButton = UIButton()
+
     
     override func viewDidLoad()
     {
@@ -87,27 +88,35 @@ class AddInstructionsScreen: UIViewController
     
     func addInstruction (sender: UIButton!)
     {
-        let instruction: String? = self.instructionTextField.text
-        recipe!.addInstruction(instruction!)
+        let instruction: Instruction = Instruction()
+        instruction.instruct = self.instructionTextField.text!
+        recipe!.instructions.append(instruction)
         instructionTextField.text = ""
     }
     
     func finishRecipe (sender: UIButton!)
     {
-        
+
         let realm = try! Realm()
-        
+
+        /*
         let permanentRecipe: PermanentRecipe = PermanentRecipe()
         permanentRecipe.recipeName = (recipe?.getName())!
         permanentRecipe.recipeType = (recipe?.getRecipeType())!
         permanentRecipe.ingredients = (recipe?.getIngredients())!
         permanentRecipe.instructions = (recipe?.getInstructions())!
+ */
         /*
          nameIn: (recipe?.getName())!, typeIn: (recipe?.getRecipeType())!, ingredientsIn: (recipe?.getIngredients())!, instructionsIn: (recipe?.getInstructions())!)
          */
-        try! realm.write({
-            realm.add(permanentRecipe)
-        })
+        
+        // You only need to do this once (per thread)
+        
+        // Add to the Realm inside a transaction
+        try! realm.write {
+            realm.add(recipe!)
+        }
+ 
         let myRecipesScreen: MyRecipesScreen = MyRecipesScreen()
         //myRecipesScreen.realm = realm
         //myRecipesScreen.recipes = self.recipe!
@@ -117,6 +126,7 @@ class AddInstructionsScreen: UIViewController
     
     func storeRecipe()
     {
+        /*
         
         let realm: Realm = try! Realm()
         let permanentRecipe: PermanentRecipe = PermanentRecipe()
@@ -124,12 +134,15 @@ class AddInstructionsScreen: UIViewController
         permanentRecipe.recipeType = (recipe?.getRecipeType())!
         permanentRecipe.ingredients = (recipe?.getIngredients())!
         permanentRecipe.instructions = (recipe?.getInstructions())!
+ */
         /*
             nameIn: (recipe?.getName())!, typeIn: (recipe?.getRecipeType())!, ingredientsIn: (recipe?.getIngredients())!, instructionsIn: (recipe?.getInstructions())!)
 */
+        /*
         try! realm.write({
             realm.add(permanentRecipe)
         })
+ */
         //realm.addObject(permanentRecipe)
         
         

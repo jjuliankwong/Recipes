@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class AddIngredientScreen: UIViewController
 {
     let width = 375
     let height = 667
     
-    var recipe: Recipe? = nil
+    var recipe: Recipe?
     
-    var ingredient: Ingredient = Ingredient()
+    
     let ingredientNameTextField: UITextField = UITextField()
     let ingredientAmountTextField: UITextField = UITextField()
     let ingredientUnitTextField: UITextField = UITextField()
@@ -35,7 +37,7 @@ class AddIngredientScreen: UIViewController
         recipeTypeLabel.backgroundColor = UIColor.whiteColor()
         recipeTypeLabel.textColor = UIColor.blackColor()
         recipeTypeLabel.textAlignment = NSTextAlignment.Center
-        recipeTypeLabel.text = recipe!.getRecipeType() +  " Recipe"
+        recipeTypeLabel.text = recipe!.recipeType! +  " Recipe"
         self.view.addSubview(recipeTypeLabel)
         
         // Logo
@@ -118,18 +120,23 @@ class AddIngredientScreen: UIViewController
     func addIngredient (sender: UIButton!)
     {
         let ingredientName: String? = self.ingredientNameTextField.text
-        //let ingredientAmount: Int? = self.ingredientAmountTextField.text as Int
+        let ingredientAmount: String? = self.ingredientAmountTextField.text
         let ingredientUnit: String? = self.ingredientUnitTextField.text
         
+        /*
         ingredient.changeName(ingredientName!)
         ingredient.changeAmount(1)
         ingredient.changeAmountUnit(ingredientUnit!)
         recipe!.addIngredient(ingredient)
+ */
         
         ingredientNameTextField.text = ""
         ingredientAmountTextField.text = ""
         ingredientUnitTextField.text = ""
-        
+        var ingredient: Ingredient = Ingredient()
+        ingredient.ingred = ingredientUnit! + " " + ingredientAmount! + " " + ingredientName!
+        recipe!.ingredients.append(ingredient)
+
     }
     
     func goToAddInstructionsScreen (sender: UIButton!)

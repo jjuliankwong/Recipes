@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class NewRecipeScreen: UIViewController
 {
+    
     let recipe: Recipe = Recipe()
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
+
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = 375
         let screenHeight = 667
         
-        super.viewDidLoad()
         
         // Set background
         self.view.backgroundColor = UIColor.whiteColor()
@@ -157,61 +161,61 @@ class NewRecipeScreen: UIViewController
     
     func makeAppetizerRecipe (sender: UIButton!)
     {
-        recipe.setRecipeType("Appetizer")
+        recipe.recipeType = "Appetizer"
         makeNewRecipe(sender)
     }
     
     func makeBreadRecipe (sender: UIButton!)
     {
-        recipe.setRecipeType("Bread")
+        recipe.recipeType = "Bread"
         makeNewRecipe(sender)
     }
     
     func makeBreakfastRecipe (sender: UIButton!)
     {
-        recipe.setRecipeType("Breakfast")
+        recipe.recipeType = "Breakfast"
         makeNewRecipe(sender)
     }
     
     func makeSaladRecipe(sender: UIButton!)
     {
-        recipe.setRecipeType("Salad")
+        recipe.recipeType = "Salad"
         makeNewRecipe(sender)
     }
     
     func makeSandwhichRecipe(sender: UIButton!)
     {
-        recipe.setRecipeType("Sandwhich")
+        recipe.recipeType = "Sandwhich"
         makeNewRecipe(sender)
     }
     
     func makeSoupRecipe(sender: UIButton!)
     {
-        recipe.setRecipeType("Soup")
+        recipe.recipeType = "Soup"
         makeNewRecipe(sender)
     }
 
     func makeEntreeRecipe(sender: UIButton!)
     {
-        recipe.setRecipeType("Entree")
+        recipe.recipeType = "Entree"
         makeNewRecipe(sender)
     }
     
     func makeDessertRecipe(sender: UIButton!)
     {
-        recipe.setRecipeType("Dessert")
+        recipe.recipeType = "Dessert"
         makeNewRecipe(sender)
     }
     
     func makeDrinkRecipe(sender: UIButton!)
     {
-        recipe.setRecipeType("Drink")
+        recipe.recipeType = "Drink"
         makeNewRecipe(sender)
     }
     
     func makeSauceRecipe(sender: UIButton!)
     {
-        recipe.setRecipeType("Sauce")
+        recipe.recipeType = "Sauce"
         makeNewRecipe(sender)
     }
     

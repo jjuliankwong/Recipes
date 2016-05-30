@@ -8,17 +8,17 @@
 
 import Foundation
 import UIKit
+import Realm
+import RealmSwift
 
-public class Recipe
+
+public class Recipe: Object
 {
-    var ingredients: [Ingredient] = []
-    var instructions: [String] = []
-    var recipeType: String = ""
-    var recipeName: String = ""
-    
-    init()
-    {
-    }
+    var ingredients: List<Ingredient> = List<Ingredient>()
+    var instructions: List<Instruction> = List<Instruction>()
+    var recipeType: String?
+    var recipeName: String?
+
    
     /*
     init(ingredients: [Ingredient], instructions: [String], recipeType: String)
@@ -28,6 +28,7 @@ public class Recipe
         self.recipeType = recipeType
     }
  */
+    /*
     
     func setRecipeType(recipeTypeIn: String)
     {
@@ -63,9 +64,11 @@ public class Recipe
     {
         recipeName = nameIn
     }
+
     
     func getName() -> String
     {
         return recipeName
     }
+  */
 }
