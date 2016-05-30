@@ -16,6 +16,9 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     let tableView: UITableView = UITableView(frame: UIScreen.mainScreen().bounds, style:UITableViewStyle.Plain)
     //var realm: Realm? = nil
     let realm = try! Realm()
+    var myRecipes: Results<Recipe>?
+
+
     /*
     var permanentRecipes: Results<(PermanentRecipe,,>)//: [PermanentRecipe]
     {
@@ -50,8 +53,6 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     */
     //var recipes: Recipe? = nil
-
-    var stringRecipes: [String] = []
     
     let width = 375
     let height = 667
@@ -61,6 +62,8 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        myRecipes = realm.objects(Recipe)
+
         // Set background
         self.view.backgroundColor = UIColor.whiteColor()
         
@@ -68,7 +71,7 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = CGRect(x: 0, y: 70, width: 375, height: 697)
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "CellIdentifier")
         self.view.addSubview(self.tableView)
         
         // Set up Menu Button
@@ -85,13 +88,11 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView (tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return stringRecipes.count
+        return myRecipes!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let myRecipes = realm.objects(PermanentRecipe)
-
         /*
         
         let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
@@ -109,9 +110,10 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
  */
         let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath) as UITableViewCell
         
-        let index = UInt(indexPath.row)
-        let singlePermanentRecipe = myRecipes.first//permanentRecipes.objectAtIndex(index) as! PermanentRecipe
-        cell.textLabel!.text = singlePermanentRecipe!.getName()
+        //let singlePermanentRecipe = myRecipes.first//permanentRecipes.objectAtIndex(index) as! PermanentRecipe
+        let rlmRecipe: Recipe = myRecipes![indexPath.row]
+        cell.textLabel!.text = rlmRecipe.recipeName
+        //cell.textLabel!.text = singlePermanentRecipe!.getName()
         
         return cell
     }

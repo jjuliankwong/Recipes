@@ -5,6 +5,8 @@
 //  Created by Jacob on 5/9/16.
 //  Copyright © 2016 JAJ. All rights reserved.
 import UIKit
+import Realm
+import RealmSwift
 
 class MenuScreen: UIViewController
 {
@@ -67,6 +69,7 @@ class MenuScreen: UIViewController
      *********/
     func goToNewRecipeScreen(sender: UIButton!)
     {
+        
         let newRecipeScreen:NewRecipeScreen = NewRecipeScreen()
         
         self.presentViewController(newRecipeScreen, animated: true, completion: nil)

@@ -6,15 +6,16 @@
 //  Copyright © 2016 JAJ. All rights reserved.
 //
 
+/*
 import Foundation
 import UIKit
 import Realm
 import RealmSwift
 
-public class PermanentRecipe: Object
+public class PermanentRecipe: RLMObject
 {
-    dynamic var ingredients: [Ingredient] = []
-    dynamic var instructions: [String] = []
+    dynamic var ingredients: RLMArray?
+    dynamic var instructions: RLMArray?
     dynamic var recipeType: String = ""
     dynamic var recipeName: String = ""
     /*
@@ -41,3 +42,4 @@ public class PermanentRecipe: Object
     }
  
 }
+ */

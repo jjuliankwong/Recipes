@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class NameRecipeScreen: UIViewController
 {
@@ -32,7 +34,7 @@ class NameRecipeScreen: UIViewController
         recipeTypeLabel.backgroundColor = UIColor.whiteColor()
         recipeTypeLabel.textColor = UIColor.blackColor()
         recipeTypeLabel.textAlignment = NSTextAlignment.Center
-        recipeTypeLabel.text = recipe!.getRecipeType() +  " Recipe"
+        recipeTypeLabel.text = recipe!.recipeType +  " Recipe"
         self.view.addSubview(recipeTypeLabel)
         
         // Logo
@@ -78,7 +80,7 @@ class NameRecipeScreen: UIViewController
     func goToAddIngredientsScreen (sender: UIButton!)
     {
         let recipeName: String? = self.recipeNameTextField.text
-        recipe!.setRecipeName(recipeName!)
+        recipe!.recipeName = recipeName!
         
         recipeNameTextField.text = ""
         
