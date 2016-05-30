@@ -112,7 +112,7 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         //let singlePermanentRecipe = myRecipes.first//permanentRecipes.objectAtIndex(index) as! PermanentRecipe
         let rlmRecipe: Recipe = myRecipes![indexPath.row]
-        cell.textLabel!.text = rlmRecipe.recipeName
+        cell.textLabel!.text = rlmRecipe["recipeName"] as! String
         //cell.textLabel!.text = singlePermanentRecipe!.getName()
         
         return cell

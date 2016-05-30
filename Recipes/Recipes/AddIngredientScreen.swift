@@ -37,7 +37,7 @@ class AddIngredientScreen: UIViewController
         recipeTypeLabel.backgroundColor = UIColor.whiteColor()
         recipeTypeLabel.textColor = UIColor.blackColor()
         recipeTypeLabel.textAlignment = NSTextAlignment.Center
-        recipeTypeLabel.text = recipe!.recipeType +  " Recipe"
+        recipeTypeLabel.text = recipe!.recipeType! +  " Recipe"
         self.view.addSubview(recipeTypeLabel)
         
         // Logo
