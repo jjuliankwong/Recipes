@@ -122,14 +122,7 @@ class AddIngredientScreen: UIViewController
         let ingredientName: String? = self.ingredientNameTextField.text
         let ingredientAmount: String? = self.ingredientAmountTextField.text
         let ingredientUnit: String? = self.ingredientUnitTextField.text
-        
-        /*
-        ingredient.changeName(ingredientName!)
-        ingredient.changeAmount(1)
-        ingredient.changeAmountUnit(ingredientUnit!)
-        recipe!.addIngredient(ingredient)
- */
-        
+                
         ingredientNameTextField.text = ""
         ingredientAmountTextField.text = ""
         ingredientUnitTextField.text = ""
