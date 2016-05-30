@@ -96,21 +96,9 @@ class AddInstructionsScreen: UIViewController
     
     func finishRecipe (sender: UIButton!)
     {
-
-        let realm = try! Realm()
-
-        /*
-        let permanentRecipe: PermanentRecipe = PermanentRecipe()
-        permanentRecipe.recipeName = (recipe?.getName())!
-        permanentRecipe.recipeType = (recipe?.getRecipeType())!
-        permanentRecipe.ingredients = (recipe?.getIngredients())!
-        permanentRecipe.instructions = (recipe?.getInstructions())!
- */
-        /*
-         nameIn: (recipe?.getName())!, typeIn: (recipe?.getRecipeType())!, ingredientsIn: (recipe?.getIngredients())!, instructionsIn: (recipe?.getInstructions())!)
-         */
-        
         // You only need to do this once (per thread)
+        let realm = try! Realm()
+        
         
         // Add to the Realm inside a transaction
         try! realm.write {
@@ -118,33 +106,8 @@ class AddInstructionsScreen: UIViewController
         }
  
         let myRecipesScreen: MyRecipesScreen = MyRecipesScreen()
-        //myRecipesScreen.realm = realm
-        //myRecipesScreen.recipes = self.recipe!
+
         self.presentViewController(myRecipesScreen, animated: true, completion: nil)
-        
-    }
-    
-    func storeRecipe()
-    {
-        /*
-        
-        let realm: Realm = try! Realm()
-        let permanentRecipe: PermanentRecipe = PermanentRecipe()
-        permanentRecipe.recipeName = (recipe?.getName())!
-        permanentRecipe.recipeType = (recipe?.getRecipeType())!
-        permanentRecipe.ingredients = (recipe?.getIngredients())!
-        permanentRecipe.instructions = (recipe?.getInstructions())!
- */
-        /*
-            nameIn: (recipe?.getName())!, typeIn: (recipe?.getRecipeType())!, ingredientsIn: (recipe?.getIngredients())!, instructionsIn: (recipe?.getInstructions())!)
-*/
-        /*
-        try! realm.write({
-            realm.add(permanentRecipe)
-        })
- */
-        //realm.addObject(permanentRecipe)
-        
         
     }
     
