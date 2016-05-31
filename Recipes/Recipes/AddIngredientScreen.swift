@@ -1,10 +1,9 @@
-//
-//  NewRecipeScreen2.swift
-//  Recipes
-//
-//  Created by Jacob on 5/23/16.
-//  Copyright © 2016 JAJ. All rights reserved.
-//
+/*
+ *
+ * AddIngredientScreen Class
+ * This is the screen that the user is taken to after they have named the recipe they want to create.  It allows the user to add ingredients to their recipe, which will subsequently be stored in their recipe. 
+ *
+ */
 
 import UIKit
 import Realm
@@ -22,6 +21,9 @@ class AddIngredientScreen: UIViewController
     let ingredientAmountTextField: UITextField = UITextField()
     let ingredientUnitTextField: UITextField = UITextField()
     
+    /***********
+     This is the method that creates the AddIngredientScreen and loads it.
+     *********/
     override func viewDidLoad()
     {
         super.viewDidLoad()

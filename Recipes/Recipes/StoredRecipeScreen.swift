@@ -1,10 +1,9 @@
-//
-//  StoredRecipe.swift
-//  Recipes
-//
-//  Created by Jessica Houghton on 5/30/16.
-//  Copyright © 2016 JAJ. All rights reserved.
-//
+/*
+ *
+ * StoredRecipeScreen Class
+ * This is the screen that displays a single stored recipe.  This is where a user is taken when they click on a single recipe in the list of their stored recipes.  It displays all relevent informaiton about that specific recipe that was clicked on.
+ *
+ */
 
 import UIKit
 import Realm
@@ -39,7 +38,6 @@ class StoredRecipeScreen: UIViewController
         menuButton.addTarget(self, action: "goToMenuScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(menuButton)
         
-        // Set up Title
         let name: UILabel = UILabel()
         name.frame = CGRectMake(0, 60, 375, 50)
         name.font = UIFont(name: "Georgia", size: 20)
@@ -48,8 +46,7 @@ class StoredRecipeScreen: UIViewController
         name.textAlignment = NSTextAlignment.Center
         name.text = recipe!.recipeName
         self.view.addSubview(name)
-        
-        // Set up Title
+    
         let ingred: UILabel = UILabel()
         ingred.frame = CGRectMake(10, 100, 375, 20)
         ingred.font = UIFont(name: "Georgia", size: 15)
@@ -62,7 +59,6 @@ class StoredRecipeScreen: UIViewController
         
         var ingredCounter = 0
         for ingredient in recipe!.ingredients {
-            // Set up Title
             let specIngred: UILabel = UILabel()
             specIngred.frame = CGRectMake(20, (CGFloat)(120 + (15*ingredCounter)), 375, 15)
             specIngred.font = UIFont(name: "Georgia", size: 10)
@@ -73,7 +69,6 @@ class StoredRecipeScreen: UIViewController
             ingredCounter++
         }
         
-        // Set up Title
         let instruct: UILabel = UILabel()
         instruct.frame = CGRectMake(10, (CGFloat)(140 + (15*ingredCounter)), 175, 20)
         instruct.font = UIFont(name: "Georgia", size: 15)
@@ -84,7 +79,6 @@ class StoredRecipeScreen: UIViewController
         
         var instructCounter = 0
         for instruction in recipe!.instructions {
-            // Set up Title
             let specInstruct: UILabel = UILabel()
             specInstruct.frame = CGRectMake(20, (CGFloat)(120 + (15*ingredCounter) + 40 + 15*instructCounter), 375, 15)
             specInstruct.font = UIFont(name: "Georgia", size: 10)

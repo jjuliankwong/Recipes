@@ -135,18 +135,18 @@
 				1681938B1CE288DD00F0BAD1 /* InitScreen.swift */,
 				168193891CE15C9000F0BAD1 /* MenuScreen.swift */,
 				1681938F1CECD11500F0BAD1 /* NewRecipeScreen.swift */,
+				41EFE5C81CEA4350006A7601 /* MyRecipesScreen.swift */,
 				82FC25C01CFCD8A0002B460C /* StoredRecipeScreen.swift */,
 				160CE1671CF61BD100FA2813 /* NameRecipeScreen.swift */,
 				1636B2801CF398DD001E2FED /* AddIngredientScreen.swift */,
+				160CE1651CF5E9FA00FA2813 /* AddInstructionsScreen.swift */,
 				163FE5A21CFBB81400782ECA /* Ingredient.swift */,
 				163FE5A01CFBB5D400782ECA /* Instruction.swift */,
-				160CE1651CF5E9FA00FA2813 /* AddInstructionsScreen.swift */,
 				411733E51CE2857100726866 /* Recipe.swift */,
 				1681935B1CE15C6C00F0BAD1 /* AppDelegate.swift */,
 				168193621CE15C6C00F0BAD1 /* Assets.xcassets */,
 				168193641CE15C6C00F0BAD1 /* LaunchScreen.storyboard */,
 				168193671CE15C6C00F0BAD1 /* Info.plist */,
-				41EFE5C81CEA4350006A7601 /* MyRecipesScreen.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";

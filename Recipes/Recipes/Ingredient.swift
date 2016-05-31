@@ -1,10 +1,9 @@
-//
-//  Ingredient.swift
-//  Recipes
-//
-//  Created by Jacob on 5/29/16.
-//  Copyright © 2016 JAJ. All rights reserved.
-//
+/*
+ *
+ * Ingredient Class
+ * This is the class that holds an ingredient.  A user will enter all the relevent information about an ingredient used in a recipe and then this will be stored in a string. 
+ *
+ */
 
 import Foundation
 import UIKit

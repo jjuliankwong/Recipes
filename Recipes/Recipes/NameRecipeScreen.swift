@@ -1,10 +1,9 @@
-//
-//  NameRecipeScreen.swift
-//  Recipes
-//
-//  Created by Jacob on 5/25/16.
-//  Copyright © 2016 JAJ. All rights reserved.
-//
+/*
+ *
+ * NameRecipeScreen  Class
+ * This is the screen that the user is taken to first when they want to create a new recipe.  It allows the user to enter the name of their recipe. 
+ *
+ */
 
 import UIKit
 import Realm
@@ -19,6 +18,9 @@ class NameRecipeScreen: UIViewController
     
     let recipeNameTextField: UITextField = UITextField()
     
+    /***********
+     This is the method that creates the NameRecipeScreen and loads it.
+     *********/
     override func viewDidLoad()
     {
         super.viewDidLoad()
