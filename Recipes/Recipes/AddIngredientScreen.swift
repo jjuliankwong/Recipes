@@ -127,7 +127,7 @@ class AddIngredientScreen: UIViewController
         ingredientAmountTextField.text = ""
         ingredientUnitTextField.text = ""
         var ingredient: Ingredient = Ingredient()
-        ingredient.ingred = ingredientUnit! + " " + ingredientAmount! + " " + ingredientName!
+        ingredient.ingred = ingredientAmount! + " " + ingredientUnit! + " of " + ingredientName!
         recipe!.ingredients.append(ingredient)
 
     }
