@@ -47,6 +47,8 @@ class StoredRecipeScreen: UIViewController
         name.text = recipe!.recipeName
         self.view.addSubview(name)
     
+
+        // Set up Title
         let ingred: UILabel = UILabel()
         ingred.frame = CGRectMake(10, 100, 375, 20)
         ingred.font = UIFont(name: "Georgia", size: 15)
