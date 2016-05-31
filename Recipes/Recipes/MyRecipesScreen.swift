@@ -46,6 +46,7 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         menuButton.addTarget(self, action: "goToMenuScreen:", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(menuButton)
         
+
     }
     
     func tableView (tableView:UITableView, numberOfRowsInSection section:Int) -> Int
@@ -58,7 +59,7 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath) as UITableViewCell
         
         let rlmRecipe: Recipe = myRecipes![indexPath.row]
-        cell.textLabel!.text = rlmRecipe["recipeName"] as! String
+        cell.textLabel!.text = rlmRecipe.recipeName 
         
         return cell
     }
@@ -67,6 +68,11 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         print("You selected cell #\(indexPath.row)!")
+        
+        let storedRecipeScreen:StoredRecipeScreen = StoredRecipeScreen()
+        storedRecipeScreen.recipe = self.myRecipes![indexPath.row]
+        
+        self.presentViewController(storedRecipeScreen, animated: true, completion: nil)
     }
     
     func goToMenuScreen (sender: UIButton!)
@@ -83,6 +89,10 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
     
     
 }
