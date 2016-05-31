@@ -1,9 +1,9 @@
-//
-//  MenuScreen.swift
-//  Recipes
-//
-//  Created by Jacob on 5/9/16.
-//  Copyright © 2016 JAJ. All rights reserved.
+/*
+ *
+ * MenuScreen Class
+ * This is the second screen that shows up when you open the app.  It has the logo and also gives the user two different options: either to create another recipe, or to simply view the recipes they have already created. 
+ *
+ */
 import UIKit
 import Realm
 import RealmSwift

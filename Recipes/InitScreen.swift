@@ -1,10 +1,9 @@
-//
-//  InitScreen.swift
-//  Recipes
-//
-//  Created by Jacob on 5/10/16.
-//  Copyright © 2016 JAJ. All rights reserved.
-//
+/*
+ *
+ * InitScreen Class
+ * This is the first screen that shows up when you open the app.  It has the logo and a button that takes the user inside the app.
+ *
+ */
 
 import UIKit
 import Realm

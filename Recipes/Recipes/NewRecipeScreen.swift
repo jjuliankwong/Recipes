@@ -1,10 +1,9 @@
-//
-//  NewRecipeScreen.swift
-//  Recipes
-//
-//  Created by Jacob on 5/18/16.
-//  Copyright © 2016 JAJ. All rights reserved.
-//
+/*
+ *
+ * NewRecipeScreen Class
+ * This is the screen that shows up when you requested to create a new recipe. It displays all the different types of recipes that one can create, and also allows the user to go back to the menu screen by pressing a button. 
+ *
+ */
 
 import UIKit
 import Realm
@@ -15,6 +14,9 @@ class NewRecipeScreen: UIViewController
     
     let recipe: Recipe = Recipe()
     
+    /***********
+     This is the method that creates the NewRecipeScreen and loads it.
+     *********/
     override func viewDidLoad()
     {
         super.viewDidLoad()

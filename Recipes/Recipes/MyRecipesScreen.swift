@@ -1,10 +1,10 @@
-//
-//  MyRecipesScreen.swift
-//  Recipes
-//
-//  Created by Amrita Misha on 5/16/16.
-//  Copyright © 2016 JAJ. All rights reserved.
-//
+/*
+ *
+ * MyRecipesScreen Class
+ * This is a screen that utilizes table view in order to display all of the recipes that the user has created.  It allows the user to click on a recipe that they want to view (which will take the user to the StoredRecipeScreen dictated by the recipe they clicked on and created).  A user is taken to this screen when they click on "view my recipes" from the menu screen.
+ *
+ */
+
 
 import Foundation
 import UIKit
@@ -20,10 +20,12 @@ class MyRecipesScreen: UIViewController, UITableViewDelegate, UITableViewDataSou
     let width = 375
     let height = 667
     
+    /***********
+     This is the method that creates the MyRecipesScreen and loads it.
+     *********/
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         myRecipes = realm.objects(Recipe)
 

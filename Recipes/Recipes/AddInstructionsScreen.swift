@@ -1,10 +1,9 @@
-//
-//  addInstructionsScreen.swift
-//  Recipes
-//
-//  Created by Jacob on 5/25/16.
-//  Copyright © 2016 JAJ. All rights reserved.
-//
+/*
+ *
+ * AddInstructionScreen Class
+ * This is the screen that the user is taken to after they have added all the ingredients they need in their recipe.  It allows the user to add instructions to their recipe, which will subsequently be stored in their recipe.
+ *
+ */
 
 import UIKit
 import Realm
@@ -19,8 +18,10 @@ class AddInstructionsScreen: UIViewController
 
     let instructionTextField: UITextField = UITextField()
     let addInstructionButton: UIButton = UIButton()
-
     
+    /***********
+     This is the method that creates the AddInstructionScreen and loads it.
+     *********/
     override func viewDidLoad()
     {
         super.viewDidLoad()

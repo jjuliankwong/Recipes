@@ -1,10 +1,9 @@
-//
-//  AppDelegate.swift
-//  Recipes
-//
-//  Created by Jacob on 5/9/16.
-//  Copyright © 2016 JAJ. All rights reserved.
-//
+/*
+ *
+ * AppDelegate Class
+ * This is a neccessary class that Swift needs in order to function properly.  This allows the app to continue running, and display information correctly, and allows the app to terminate if something goes wrong. 
+ *
+ */
 
 import UIKit
 import Realm
