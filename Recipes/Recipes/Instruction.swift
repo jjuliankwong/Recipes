@@ -13,5 +13,5 @@ import RealmSwift
 
 public class Instruction: Object
 {
-    var instruct: String = ""
+    dynamic var instruct: String = ""
 }

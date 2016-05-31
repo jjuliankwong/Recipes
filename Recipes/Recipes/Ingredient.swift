@@ -13,5 +13,6 @@ import RealmSwift
 
 public class Ingredient: Object
 {
-    var ingred: String = ""
+    dynamic var ingred: String = ""
+    
 }
