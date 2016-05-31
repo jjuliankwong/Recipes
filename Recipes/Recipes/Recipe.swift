@@ -16,6 +16,6 @@ public class Recipe: Object
 {
     var ingredients: List<Ingredient> = List<Ingredient>()
     var instructions: List<Instruction> = List<Instruction>()
-    var recipeType: String?
-    var recipeName: String?
+    dynamic var recipeType: String?
+    dynamic var recipeName: String?
 }
